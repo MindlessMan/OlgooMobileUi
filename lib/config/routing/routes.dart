@@ -5,8 +5,8 @@ import 'package:olgoo_mobile/features/presentation/authentication/screens/login.
 import 'package:olgoo_mobile/features/presentation/authentication/screens/otp.screen.dart';
 import 'package:olgoo_mobile/features/presentation/authentication/screens/signup.screen.dart';
 import 'package:olgoo_mobile/features/presentation/dashboard/screen/dashboard.screen.dart';
+import 'package:olgoo_mobile/features/presentation/intro/screens/free_trial.screen.dart';
 import 'package:olgoo_mobile/features/presentation/intro/screens/onboarding.screen.dart';
-import 'package:olgoo_mobile/features/presentation/intro/screens/splash.screen.dart';
 import 'package:olgoo_mobile/features/presentation/profile/screens/profile.screen.dart';
 import 'package:olgoo_mobile/features/presentation/orders/screens/orders.dart';
 
@@ -16,7 +16,7 @@ final GoRouter routs = GoRouter(initialLocation: "/splash", routes: [
   GoRoute(
     path: '/splash',
     name: "/splash",
-    builder: (context, state) => SplashScreen(),
+    builder: (context, state) => const FreeTrialScreen(),
   ),
   GoRoute(
     path: '/onboarding',

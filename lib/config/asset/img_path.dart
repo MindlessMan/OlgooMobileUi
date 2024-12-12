@@ -4,4 +4,5 @@ class ImgPath {
   static const String shirt = "assets/img/shirt.png";
   static const String tag = "assets/img/tag.png";
   static const String user = "assets/img/user.png";
+  static const String star = "assets/img/star.png";
 }

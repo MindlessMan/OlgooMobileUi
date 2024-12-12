@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:olgoo_mobile/config/routing/routs.dart';
-import 'package:olgoo_mobile/config/theme/theme_data.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'package:olgoo_mobile/config/routing/routes.dart';
+import 'package:olgoo_mobile/config/theme/color_pallet.dart';
+import 'package:olgoo_mobile/config/theme/theme_data.dart';
 import 'package:olgoo_mobile/core/dependency_injection/locator.dart';
 
 import 'features/presentation/profile/bloc/company.bloc.dart';
@@ -15,6 +17,10 @@ Future<void> main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: ColorPallet.lightColorScheme.onSecondary,
+    statusBarIconBrightness: Brightness.dark,
+  ));
   runApp(MultiBlocProvider(providers: [
     BlocProvider(
       create: (context) => CompanyBloc(locator()),
@@ -24,8 +30,6 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.z
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -42,19 +46,5 @@ class MyApp extends StatelessWidget {
         Locale('fa'), // farsi
       ],
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
   }
 }

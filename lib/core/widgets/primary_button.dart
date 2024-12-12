@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:olgoo_mobile/config/theme/measure.dart';
 
@@ -25,8 +24,17 @@ class PrimaryButton extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.8,
         height: 48,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Measures.largBorderRadius),
-            gradient:  LinearGradient(colors: isPrimaryColor ? [Theme.of(context).colorScheme.primary,Theme.of(context).colorScheme.primaryFixed]: [Theme.of(context).colorScheme.secondary,Theme.of(context).colorScheme.secondary])),
+            borderRadius: BorderRadius.circular(Measures.largeBorderRadius),
+            gradient: LinearGradient(
+                colors: isPrimaryColor
+                    ? [
+                        Theme.of(context).colorScheme.primary,
+                        Theme.of(context).colorScheme.primaryFixed
+                      ]
+                    : [
+                        Theme.of(context).colorScheme.secondary,
+                        Theme.of(context).colorScheme.secondary
+                      ])),
         child: Center(child: child),
       ),
     );

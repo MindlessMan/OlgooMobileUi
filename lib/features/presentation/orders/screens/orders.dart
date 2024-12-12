@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:olgoo_mobile/config/theme/measure.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
@@ -6,7 +7,7 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: const Text("مدیریت سفارش ها"),
@@ -71,17 +72,21 @@ class OrdersScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const TabBar(
-                    labelColor: Colors.green,
-                    unselectedLabelColor: Colors.grey,
-                    indicatorColor: Colors.green,
-                    isScrollable: true,
-                    tabs: [
-                      Tab(text: "تحویلی"),
-                      Tab(text: "آماده"),
-                      Tab(text: "جاری"),
-                      Tab(text: "انتخاب دسته بندی"),
-                    ],
+                  SizedBox(
+                    width: Measures.smallSpace,
+                  ),
+                  const Flexible(
+                    child: TabBar(
+                      labelColor: Colors.green,
+                      unselectedLabelColor: Colors.grey,
+                      indicatorColor: Colors.green,
+                      isScrollable: false,
+                      tabs: [
+                        Tab(text: "تحویلی"),
+                        Tab(text: "آماده"),
+                        Tab(text: "جاری"),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -147,7 +152,6 @@ class OrdersScreen extends StatelessWidget {
             ),
           ],
         ),
-       
       ),
     );
   }
@@ -160,7 +164,8 @@ class OrderCard extends StatelessWidget {
   final String totalPrice;
   final String status;
 
-  const OrderCard({super.key, 
+  const OrderCard({
+    super.key,
     required this.title,
     required this.date,
     required this.details,

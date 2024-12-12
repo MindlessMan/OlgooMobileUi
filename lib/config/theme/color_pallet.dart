@@ -22,5 +22,6 @@ class ColorPallet {
     onSurface: Color(0xff000000),
     outline: Color(0xffD4D6DD),
     surfaceBright: Color(0xff71727A),
+    onPrimaryFixed: Color(0xffC5C6CC),
   );
 }

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
-
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -35,7 +32,6 @@ class DashboardScreen extends StatelessWidget {
           ],
         ),
       ),
-     // bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

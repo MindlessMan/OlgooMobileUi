@@ -18,7 +18,7 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final controller = PageController(initialPage: 0);
-  PreferencesOprator _preferencesOprator = PreferencesOprator(locator());
+  final PreferencesOprator _preferencesOprator = PreferencesOprator(locator());
   int index = 0;
 
   @override
@@ -59,14 +59,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           ),
         ),
         SmoothPageIndicator(
-          controller: controller, // PageController
+          controller: controller,
           count: 3,
           axisDirection: Axis.horizontal,
           effect: WormEffect(
               activeDotColor: Theme.of(context).colorScheme.primary,
               type: WormType.thin,
               dotWidth: 12,
-              dotHeight: 12), // your preferred effect
+              dotHeight: 12),
         ),
         (MediaQuery.of(context).size.height * 0.27).verticalSpace,
         PrimaryButton(
